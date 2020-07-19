@@ -24,11 +24,11 @@ router.get('/', auth, async (req, res) => {
 // Private access
 router.post(
   '/',
-  [auth, [check('name', 'Name is required.').not().isEmpty()]],
+  [auth, [check('item_name', 'Name of item is required.').not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ erros: errors.array() });
+      return res.status(400).json({ errors: errors.array() });
     }
     const {
       item_name,
@@ -39,7 +39,7 @@ router.post(
       borrower_relationship,
     } = req.body;
     try {
-      const newItem = new Item({
+      const newItem = new Items({
         item_name,
         borrower_name,
         date_lent,
