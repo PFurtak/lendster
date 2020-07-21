@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import AuthState from './context/auth/AuthState';
 import setAuthToken from '../src/utils/setAuthToken';
+import AlertState from './context/alert/AlertState';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -10,7 +11,9 @@ if (localStorage.token) {
 const App = () => {
   return (
     <AuthState>
-      <div className='container'> Hello World </div>
+      <AlertState>
+        <div className='container'> Hello World </div>
+      </AlertState>
     </AuthState>
   );
 };
