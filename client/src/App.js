@@ -1,6 +1,18 @@
 import React from 'react';
 import './App.css';
+import AuthState from './context/auth/AuthState';
+import setAuthToken from '../src/utils/setAuthToken';
 
-const App = () => <h1>Hello World</h1>;
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
+const App = () => {
+  return (
+    <AuthState>
+      <div className='container'> Hello World </div>
+    </AuthState>
+  );
+};
 
 export default App;
