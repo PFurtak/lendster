@@ -6,6 +6,7 @@ import setAuthToken from '../src/utils/setAuthToken';
 import AlertState from './context/alert/AlertState';
 import Alerts from './components/layout/Alerts';
 import Navbar from './components/layout/Navbar';
+import Login from './components/auth/Login';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -20,6 +21,9 @@ const App = () => {
             <Navbar />
             <div className='container'>
               <Alerts />
+              <Switch>
+                <Route exact path='/login' component={Login} />
+              </Switch>
             </div>
           </Fragment>
         </Router>
