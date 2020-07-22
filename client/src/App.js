@@ -8,6 +8,7 @@ import Alerts from './components/layout/Alerts';
 import Navbar from './components/layout/Navbar';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import About from './components/pages/About';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -23,6 +24,7 @@ const App = () => {
             <div className='container'>
               <Alerts />
               <Switch>
+                <Route exact path='/about' component={About} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/login' component={Login} />
               </Switch>
