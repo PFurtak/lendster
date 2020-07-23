@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import ItemForm from '../itemss/ItemForm';
+import ItemForm from '../items/ItemForm';
 import ItemFilter from '../items/ItemFilter';
 import Items from '../items/Items';
 import AuthContext from '../../context/auth/authContext';

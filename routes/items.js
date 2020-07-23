@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const { check, validationResult } = require('express-validator');
-const Items = require('../models/ItemModel');
+const Item = require('../models/ItemModel');
 
 // GET route for api/items
 // Get all users lent items
 // Private access
 router.get('/', auth, async (req, res) => {
   try {
-    const items = await Items.find({ user: req.user.id }).sort({
+    const items = await Item.find({ user: req.user.id }).sort({
       date: -1,
     });
     res.json(items);
@@ -71,12 +71,13 @@ router.put('/:id', auth, async (req, res) => {
   } = req.body;
 
   const itemFields = {};
-  if (item_name) itemFields.name = item_name;
-  if (borrower_name) itemFields = borrower_name;
-  if (date_lent) date_lent = date_lent;
-  if (borrower_email) itemFields.email = borrower_email;
-  if (borrower_phone) itemFields.phone = borrower_phone;
-  if (borrower_relationship) itemFields.type = borrower_relationship;
+  if (item_name) itemFields.item_name = item_name;
+  if (borrower_name) itemFields.borrower_name = borrower_name;
+  if (date_lent) itemFields.date_lent = date_lent;
+  if (borrower_email) itemFields.borrower_email = borrower_email;
+  if (borrower_phone) itemFields.borrower_phone = borrower_phone;
+  if (borrower_relationship)
+    itemFields.borrower_relationship = borrower_relationship;
 
   try {
     let item = await Item.findById(req.params.id);

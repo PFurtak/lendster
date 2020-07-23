@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthState from './context/auth/AuthState';
-import ItemState from './context/items/ItemState';
+import ItemState from './context/item/ItemState';
 import setAuthToken from '../src/utils/setAuthToken';
 import AlertState from './context/alert/AlertState';
 import Alerts from './components/layout/Alerts';
