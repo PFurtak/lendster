@@ -11,22 +11,33 @@ const ItemForm = () => {
       setItem(current);
     } else {
       setItem({
-        name: '',
-        email: '',
-        phone: '',
-        type: 'personal',
+        item_name: '',
+        borrower_name: '',
+        date_lent: '',
+        borrower_email: '',
+        borrower_phone: '',
+        borrower_relationship: 'friend',
       });
     }
   }, [itemContext, current]);
 
   const [item, setItem] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    type: 'personal',
+    item_name: '',
+    borrower_name: '',
+    date_lent: '',
+    borrower_email: '',
+    borrower_phone: '',
+    borrower_relationship: 'friend',
   });
 
-  const { name, email, phone, type } = item;
+  const {
+    item_name,
+    borrower_name,
+    date_lent,
+    borrower_email,
+    borrower_phone,
+    borrower_relationship,
+  } = item;
 
   const onChange = (e) => setItem({ ...item, [e.target.name]: e.target.value });
 
@@ -46,47 +57,67 @@ const ItemForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className='text-primary'>
-        {current ? 'Edit Contact' : 'Add Contact'}
-      </h2>
+      <h2 className='text-primary'>{current ? 'Edit Item' : 'Add Item'}</h2>
       <input
         type='text'
-        placeholder='Name'
-        name='name'
-        value={name}
+        placeholder='Lent item'
+        name='item_name'
+        value={item_name}
+        onChange={onChange}
+      />
+      <input
+        type='text'
+        placeholder="Borrower's name"
+        name='borrower_name'
+        value={borrower_name}
+        onChange={onChange}
+      />
+      <input
+        type='text'
+        placeholder='Date lent'
+        name='date_lent'
+        value={date_lent}
         onChange={onChange}
       />
       <input
         type='email'
-        placeholder='Email address'
-        name='email'
-        value={email}
+        placeholder="Borrower's email address"
+        name='borrower_email'
+        value={borrower_email}
         onChange={onChange}
       />
       <input
         type='text'
-        placeholder='Phone number'
-        name='phone'
-        value={phone}
+        placeholder="Borrower's phone number"
+        name='borrower_phone'
+        value={borrower_phone}
         onChange={onChange}
       />
-      <h5>Relationship with borrower</h5>
+      <h5>Relationship with borrower:</h5>
       <input
         type='radio'
-        name='type'
-        value='personal'
-        checked={type === 'personal'}
+        name='borrower_relationship'
+        value='friend'
+        checked={borrower_relationship === 'friend'}
         onChange={onChange}
       />{' '}
-      Personal{' '}
+      Friend{' '}
       <input
         type='radio'
-        name='type'
-        value='professional'
-        checked={type === 'professional'}
+        name='borrower_relationship'
+        value='family'
+        checked={borrower_relationship === 'family'}
         onChange={onChange}
       />{' '}
-      Professional{' '}
+      Family{' '}
+      <input
+        type='radio'
+        name='borrower_relationship'
+        value='colleague'
+        checked={borrower_relationship === 'colleague'}
+        onChange={onChange}
+      />{' '}
+      Colleague{' '}
       <div>
         <input
           type='submit'
