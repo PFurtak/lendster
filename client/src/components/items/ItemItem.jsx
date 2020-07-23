@@ -5,7 +5,15 @@ import PropTypes from 'prop-types';
 const ItemItem = ({ item }) => {
   const itemContext = useContext(ItemContext);
   const { deleteItem, setCurrent, clearCurrent } = itemContext;
-  const { _id, name, email, phone, type } = item;
+  const {
+    _id,
+    item_name,
+    borrower_name,
+    date_lent,
+    borrower_email,
+    borrower_phone,
+    borrower_relationship,
+  } = item;
 
   const onDelete = () => {
     deleteItem(_id);
@@ -15,25 +23,40 @@ const ItemItem = ({ item }) => {
   return (
     <div className='card bg-light'>
       <h3 className='text-primary text-left'>
-        {name}{' '}
+        {item_name}{' '}
         <span
           style={{ float: 'right' }}
           className={
             'badge ' +
-            (type === 'professional' ? 'badge-success' : 'badge-primary')
+            (borrower_relationship === 'friend' || 'family'
+              ? 'badge-success'
+              : 'badge-primary')
           }>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+          {borrower_relationship.charAt(0).toUpperCase() +
+            borrower_relationship.slice(1)}
         </span>
       </h3>
       <ul className='list'>
-        {email && (
+        {borrower_name && (
           <li>
-            <i className='fas fa-envelope-open'></i> {email}
+            <i className='fas fa-user'></i> {borrower_name}
           </li>
         )}
-        {phone && (
+
+        {date_lent && (
           <li>
-            <i className='fas fa-phone'></i> {phone}
+            <i className='fas fa-calendar'></i> {date_lent}
+          </li>
+        )}
+
+        {borrower_email && (
+          <li>
+            <i className='fas fa-envelope-open'></i> {borrower_email}
+          </li>
+        )}
+        {borrower_phone && (
+          <li>
+            <i className='fas fa-phone'></i> {borrower_phone}
           </li>
         )}
       </ul>
