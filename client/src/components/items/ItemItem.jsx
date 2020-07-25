@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import ItemContext from '../../context/item/itemContext';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const ItemItem = ({ item }) => {
   const itemContext = useContext(ItemContext);
@@ -45,7 +46,7 @@ const ItemItem = ({ item }) => {
 
         {date_lent && (
           <li>
-            <i className='fas fa-calendar'></i> {date_lent}
+            <i className='fas fa-calendar'></i> {moment(date_lent).format('LL')}
           </li>
         )}
 

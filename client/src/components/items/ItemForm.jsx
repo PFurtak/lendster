@@ -60,35 +60,35 @@ const ItemForm = () => {
       <h2 className='text-primary'>{current ? 'Edit Item' : 'Add Item'}</h2>
       <input
         type='text'
-        placeholder='Lent item'
+        placeholder='Lent Item'
         name='item_name'
         value={item_name}
         onChange={onChange}
       />
       <input
         type='text'
-        placeholder="Borrower's name"
+        placeholder='Borrower Name'
         name='borrower_name'
         value={borrower_name}
         onChange={onChange}
       />
       <input
         type='text'
-        placeholder='Date lent'
+        placeholder='Date Lent'
         name='date_lent'
         value={date_lent}
         onChange={onChange}
       />
       <input
         type='email'
-        placeholder="Borrower's email address"
+        placeholder='Borrower Email'
         name='borrower_email'
         value={borrower_email}
         onChange={onChange}
       />
       <input
         type='text'
-        placeholder="Borrower's phone number"
+        placeholder='Borrower Phone'
         name='borrower_phone'
         value={borrower_phone}
         onChange={onChange}
