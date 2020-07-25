@@ -39,7 +39,7 @@ router.post(
       borrower_relationship,
     } = req.body;
     try {
-      const newItem = new Items({
+      const newItem = new Item({
         item_name,
         borrower_name,
         date_lent,
