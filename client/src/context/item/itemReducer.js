@@ -57,7 +57,11 @@ export default (state, action) => {
         ...state,
         filtered: state.items.filter((item) => {
           const regex = new RegExp(`${action.payload}`, 'gi');
-          return item.name.match(regex) || item.email.match(regex);
+          return (
+            item.item_name.match(regex) ||
+            item.borrower_email.match(regex) ||
+            item.borrower_name.match(regex)
+          );
         }),
         loading: false,
       };
