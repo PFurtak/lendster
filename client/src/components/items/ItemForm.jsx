@@ -60,6 +60,7 @@ const ItemForm = () => {
       <h2 className='text-primary'>{current ? 'Edit Item' : 'Add Item'}</h2>
       <input
         type='text'
+        required
         placeholder='Lent Item'
         name='item_name'
         value={item_name}
@@ -67,6 +68,7 @@ const ItemForm = () => {
       />
       <input
         type='text'
+        required
         placeholder='Borrower Name'
         name='borrower_name'
         value={borrower_name}
@@ -81,6 +83,7 @@ const ItemForm = () => {
       />
       <input
         type='email'
+        required
         placeholder='Borrower Email'
         name='borrower_email'
         value={borrower_email}
@@ -93,31 +96,39 @@ const ItemForm = () => {
         value={borrower_phone}
         onChange={onChange}
       />
-      <h5>Relationship with borrower:</h5>
-      <input
-        type='radio'
-        name='borrower_relationship'
-        value='friend'
-        checked={borrower_relationship === 'friend'}
-        onChange={onChange}
-      />{' '}
-      Friend{' '}
-      <input
-        type='radio'
-        name='borrower_relationship'
-        value='family'
-        checked={borrower_relationship === 'family'}
-        onChange={onChange}
-      />{' '}
-      Family{' '}
-      <input
-        type='radio'
-        name='borrower_relationship'
-        value='colleague'
-        checked={borrower_relationship === 'colleague'}
-        onChange={onChange}
-      />{' '}
-      Colleague{' '}
+      <h4 className='text-center text-primary'>Relationship with borrower</h4>
+      <div className='radios'>
+        <div>
+          <input
+            type='radio'
+            name='borrower_relationship'
+            value='friend'
+            checked={borrower_relationship === 'friend'}
+            onChange={onChange}
+          />
+          <label htmlFor='friend'> Friend</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            name='borrower_relationship'
+            value='family'
+            checked={borrower_relationship === 'family'}
+            onChange={onChange}
+          />
+          <label htmlFor='family'> Family</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            name='borrower_relationship'
+            value='colleague'
+            checked={borrower_relationship === 'colleague'}
+            onChange={onChange}
+          />
+          <label htmlFor='colleague'> Colleague</label>
+        </div>
+      </div>
       <div>
         <input
           type='submit'

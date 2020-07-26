@@ -356,6 +356,13 @@ button {
   font: inherit;
 }
 
+.radios {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .form-group {
   margin: 1.2rem 0;
 }
