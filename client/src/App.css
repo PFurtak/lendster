@@ -26,6 +26,7 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 a:hover {
@@ -94,12 +95,18 @@ img {
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   margin: 0.7rem 0;
 }
 
 /* List */
 .list {
   margin: 0.5rem 0;
+}
+
+li {
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .list li {
@@ -223,6 +230,7 @@ img {
   background: var(--light-color);
   color: #333;
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .alert {
@@ -273,6 +281,21 @@ img {
 .badge-success,
 .alert-success {
   background: var(--success-color);
+  color: #fff;
+}
+
+.badge-family {
+  background: #82a7a6;
+  color: #fff;
+}
+
+.badge-friend {
+  background: #9ed0e6;
+  color: #fff;
+}
+
+.badge-colleague {
+  background: #9ffcdf;
   color: #fff;
 }
 
@@ -352,6 +375,8 @@ button {
 h2,
 h3 {
   text-align: center;
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  font-weight: 900;
 }
 
 table th,
