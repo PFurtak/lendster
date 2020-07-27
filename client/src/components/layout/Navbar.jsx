@@ -62,7 +62,7 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
   title: 'Lendster',
-  icon: 'fas fa-id-card-alt',
+  icon: 'fas fa-dragon',
 };
 
 export default Navbar;

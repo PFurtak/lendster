@@ -76,7 +76,7 @@ const ItemForm = () => {
       />
       <input
         type='text'
-        placeholder='Date Lent'
+        placeholder='Date Lent (E.g. 12/25/2021)'
         name='date_lent'
         value={date_lent}
         onChange={onChange}
