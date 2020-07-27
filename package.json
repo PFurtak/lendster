@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Keep track of items you lend out",
   "main": "index.js",
+  "engines": {
+    "node": "13.7.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
