@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://lendsteradmin:L3ndSt3r123@cluster0.01mbu.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "TooCool4Skool"
+}
