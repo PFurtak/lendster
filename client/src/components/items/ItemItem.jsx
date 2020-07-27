@@ -29,9 +29,13 @@ const ItemItem = ({ item }) => {
           style={{ float: 'right' }}
           className={
             'badge ' +
-            (borrower_relationship === 'friend' || 'family'
-              ? 'badge-success'
-              : 'badge-primary')
+            (borrower_relationship === 'friend'
+              ? 'badge-friend'
+              : borrower_relationship === 'family'
+              ? 'badge-family'
+              : borrower_relationship === 'colleague'
+              ? 'badge-colleague'
+              : 'blank')
           }>
           {borrower_relationship.charAt(0).toUpperCase() +
             borrower_relationship.slice(1)}
